@@ -1,0 +1,189 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.header {
+  height: 60px;
+  background: #ff8738;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 45px;
+
+  color: white;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.header nav {
+  display: flex;
+  gap: 24px;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.catalog {
+  padding: 35px 45px;
+}
+
+.catalog-header {
+  margin-bottom: 30px;
+}
+
+.catalog-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.catalog-header p {
+  margin-top: 8px;
+  color: #777;
+}
+
+.pet-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.pet-card {
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.pet-card > img {
+  display: block;
+
+  width: 100%;
+  height: 180px;
+
+  object-fit: cover;
+}
+
+.pet-info {
+  padding: 12px;
+}
+
+.pet-info h2 {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pet-info p {
+  margin: 8px 0 15px;
+
+  color: #888;
+  font-size: 13px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.view-button {
+  flex: 1;
+
+  border: none;
+  border-radius: 7px;
+
+  padding: 8px;
+
+  background: #ff8738;
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.favorite-button {
+  width: 42px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #ff8738;
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.favorite-button.active {
+  background: #ffffff;
+  color: #ff8738;
+}
+
+@media (max-width: 900px) {
+
+  .pet-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .header {
+    height: auto;
+
+    padding: 15px 20px;
+
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .header nav {
+    gap: 15px;
+  }
+
+  .catalog {
+    padding: 25px 20px;
+  }
+
+  .pet-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
