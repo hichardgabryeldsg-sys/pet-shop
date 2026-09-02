@@ -1,14 +1,6 @@
 <header class="header">
 
-  <div class="logo">
-    HAPPY PET
-  </div>
-
-  <nav>
-    <a href="#">Contact</a>
-    <a href="#">Login</a>
-    <a href="#">Sign in</a>
-  </nav>
+  
 
 </header>
 
@@ -20,52 +12,22 @@
     <h1>Catálogo</h1>
 
     <p>
-      Encontre o look perfeito para o seu pet! Temos uma variedade de produtos para todos os gostos e estilos.
+      Acessórios para deixar seu pet ainda mais feliz.
     </p>
 
   </section>
 
 
-  <section class="pet-grid">
+  <section class="product-grid">
 
-    @for (pet of pets; track pet.id) {
+    @for (produto of produtos; track produto.id) {
 
-      <article class="pet-card">
-
-        <img
-          [src]="pet.imagem"
-          [alt]="pet.nome"
-        >
-
-        <div class="pet-info">
-
-          <h2>
-            {{ pet.nome }}
-          </h2>
-
-          <p>
-            {{ pet.descricao }}
-          </p>
-
-          <div class="card-actions">
-
-            <button class="view-button">
-              Ver
-            </button>
-
-            <button
-              class="favorite-button"
-              [class.active]="pet.favorito"
-              (click)="favoritar(pet)"
-            >
-              ♥
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
+      <app-product-card
+        [produto]="produto"
+        (favoritoAlterado)="atualizarFavorito($event)"
+        (adicionar)="adicionarAoCarrinho($event)"
+        (ver)="verProduto($event)"
+      />
 
     }
 

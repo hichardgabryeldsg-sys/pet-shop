@@ -1,1 +1,19 @@
+<header class="app-header">
+	<div class="logo">Happy Pet</div>
+
+    <nav>
+    <a href="#">Contact</a>
+    <a href="#">Login</a>
+    <a href="#">Sign in</a>
+  </nav>
+
+	<nav class="header-actions">
+		<a routerLink="/cart" class="cart-link" aria-label="Ver carrinho">
+			🛒
+			<span class="cart-count">{{ cartCount() }}</span>
+		</a>
+	</nav>
+
+</header>
+
 <router-outlet />

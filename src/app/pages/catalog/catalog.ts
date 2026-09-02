@@ -1,55 +1,31 @@
 import { Component } from '@angular/core';
-
-interface Pet {
-  id: number;
-  nome: string;
-  descricao: string;
-  imagem: string;
-  favorito: boolean;
-}
+import { ProductCard, Produto } from '../../components/product-card/product-card';
+import { cart } from '../../services/cart';
+import { productsService } from '../../services/products';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
-  standalone: true,
-  imports: [],
+  imports: [ProductCard],
   templateUrl: './catalog.html',
   styleUrl: './catalog.css'
 })
 export class Catalog {
+  produtos: Produto[] = productsService.listar();
 
-  pets: Pet[] = [
-    {
-      id: 1,
-      nome: 'Produto',
-      descricao: 'Descrição do produto',
-      imagem: 'https://images.unsplash.com/photo-1552053831-71594a27632d',
-      favorito: false
-    },
-    {
-      id: 2,
-      nome: 'Produto',
-      descricao: 'Descrição do produto',
-      imagem: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e',
-      favorito: false
-    },
-    {
-      id: 3,
-      nome: 'Produto',
-      descricao: 'Descrição do produto',
-      imagem: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d',
-      favorito: false
-    },
-    {
-      id: 4,
-      nome: 'Produto',
-      descricao: 'Descrição do produto',
-      imagem: 'https://images.unsplash.com/photo-1561037404-61cd46aa615b',
-      favorito: false
-    }
-  ];
+  constructor(private router: Router) {}
 
-  favoritar(pet: Pet): void {
-    pet.favorito = !pet.favorito;
+  atualizarFavorito(produto: Produto): void {
+    console.log('Favorito alterado:', produto);
+  }
+
+  adicionarAoCarrinho(produto: Produto): void {
+    cart.adicionar(produto, 1);
+    console.log('Adicionado ao carrinho:', produto);
+  }
+
+  verProduto(produto: Produto): void {
+    this.router.navigate(['/product', produto.id]);
   }
 
 }
