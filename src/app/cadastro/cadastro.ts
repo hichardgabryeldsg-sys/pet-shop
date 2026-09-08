@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './cadastro.css',
   templateUrl: './cadastro.html',
 })
-export class Cadastro {}
+export class Cadastro {
+
+  po
+}
