@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
-import { cart } from './services/cart';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +9,5 @@ import { cart } from './services/cart';
 })
 export class App {
   protected readonly title = 'happyPet';
-  protected readonly cart = cart;
-
-  cartCount(): number {
-    return this.cart.totalItems();
-  }
 
 }

@@ -1,7 +1,8 @@
+/* importa modulos de testes e o card de produtos */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductCard } from './product-card';
-
+/* configuração dos testes */
 describe('ProductCard', () => {
   let component: ProductCard;
   let fixture: ComponentFixture<ProductCard>;
