@@ -1,14 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Login } from './login/login';
+import { Component, signal } from "@angular/core";
+import { RouterOutlet, RouterLink } from "@angular/router";
+import { Login } from "./login/login";
 import { Cadastro } from "./cadastro/cadastro";
 
 @Component({
-  imports: [RouterOutlet, Login, Cadastro],
-  selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+  selector: "app-root",
+  imports: [RouterOutlet, RouterLink, Login, Cadastro],
+  templateUrl: "./app.html",
+  styleUrl: "./app.css"
 })
 export class App {
-  protected readonly title = signal('pet-shop');
+  protected readonly title = signal("pet-shop");
 }
