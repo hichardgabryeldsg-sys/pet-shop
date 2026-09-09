@@ -30,12 +30,13 @@
 .logo {
   display: flex;
   align-items: center;
-
   gap: 8px;
-
-  font-size: 14px;
+  width: 24vw;
+  font-size: 15px;
   font-weight: bold;
 }
+
+
 
 .logo-icon {
   font-size: 28px;
@@ -249,4 +250,21 @@ button:hover {
     width: 140px;
     margin-top: 70px;
   }
-}   
+}
+
+#img-icon {
+  height: 26px;
+  width: 55px;
+}
+
+.foto-bttn {
+  margin-top: 107px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+}
+
+.user {
+  margin-top: 260px;
+}
