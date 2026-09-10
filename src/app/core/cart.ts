@@ -1,5 +1,6 @@
 import { Injectable, computed, signal } from '@angular/core';
 
+import { Produto } from './models/produto';
 
 @Injectable({
   providedIn: 'root'
